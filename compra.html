@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completar Pedido | Mente de Titán</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="checkout-page">
+
+    <!-- Navbar simplificado para evitar fugas -->
+    <header class="navbar">
+        <div class="container nav-container checkout-nav">
+            <a href="index.html" class="logo">TITÁN<span>BOOK</span></a>
+            <span class="secure-badge">🔒 Pago 100% Seguro</span>
+        </div>
+    </header>
+
+    <main class="checkout-container container">
+        <div class="checkout-grid">
+            
+            <!-- Formulario de Pago -->
+            <div class="checkout-form-section reveal">
+                <h2>FINALIZA TU COMPRA</h2>
+                <p>Estás a un paso de revolucionar tu rendimiento deportivo.</p>
+                
+                <form class="payment-form" action="#" method="POST" id="checkoutForm">
+                    <!-- Datos del Comprador -->
+                    <fieldset>
+                        <legend>1. Datos Personales</legend>
+                        <div class="input-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" required placeholder="Ej: Carlos Atleta">
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" required placeholder="tu@email.com">
+                        </div>
+                    </fieldset>
+
+                    <!-- Tarjeta (Plantilla UI) -->
+                    <fieldset>
+                        <legend>2. Detalles de Pago</legend>
+                        <div class="input-group">
+                            <label for="tarjeta">Número de Tarjeta</label>
+                            <input type="text" id="tarjeta" required placeholder="0000 0000 0000 0000">
+                        </div>
+                        <div class="grid-2-col">
+                            <div class="input-group">
+                                <label for="fecha">Caducidad</label>
+                                <input type="text" id="fecha" required placeholder="MM/AA">
+                            </div>
+                            <div class="input-group">
+                                <label for="cvc">CVC</label>
+                                <input type="text" id="cvc" required placeholder="123">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-primary btn-block">Confirmar Pago de 24.99€</button>
+                    <p class="garantia">Garantía de devolución de 30 días si tu rendimiento no mejora.</p>
+                </form>
+            </div>
+
+            <!-- Resumen del Pedido -->
+            <div class="order-summary reveal delay">
+                <h3>Resumen de tu pedido</h3>
+                <div class="summary-item">
+                    <img src="https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=150&q=80" alt="Miniatura del libro">
+                    <div>
+                        <h4>Mente de Titán (Físico + Digital)</h4>
+                        <p>Edición Especial</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="summary-price">
+                    <span>Subtotal</span>
+                    <span>24.99€</span>
+                </div>
+                <div class="summary-price">
+                    <span>Envío</span>
+                    <span class="free">GRATIS</span>
+                </div>
+                <hr>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span>24.99€</span>
+                </div>
+                
+                <!-- Extra interactivo para urgencia -->
+                <div class="urgency-box">
+                    <p>🔥 Tu oferta expira en: <span id="countdown">10:00</span></p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content" style="text-align: center;">
+            <p>© 2026 Mente de Titán. Pagos procesados de forma segura.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
