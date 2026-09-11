@@ -210,7 +210,7 @@ h1 span, h2 span {
 
 .social-proof p {
     font-size: 0.9rem;
-    color: #FFD700; /* Estrella dorada */
+    color: #FFD700;
     font-weight: 600;
 }
 
@@ -256,6 +256,7 @@ h1 span, h2 span {
 .about-image img {
     width: 100%;
     border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .about-text h2 {
@@ -318,6 +319,69 @@ h1 span, h2 span {
 .benefit-card h3 {
     font-size: 1.8rem;
     margin-bottom: 15px;
+}
+
+/* --- NUEVA SECCIÓN: El Autor --- */
+.author-section {
+    padding: 100px 0;
+    background-color: var(--dark-surface); /* Alterna el color del fondo */
+}
+
+.author-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.author-image img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 8px;
+    /* Efecto premium: Sombra desplazada del color principal */
+    box-shadow: -20px -20px 0px rgba(255, 69, 0, 0.2); 
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #333;
+    transition: var(--transition);
+}
+
+.author-image img:hover {
+    transform: translate(5px, 5px);
+    box-shadow: -10px -10px 0px rgba(255, 69, 0, 0.5);
+}
+
+.author-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.author-text p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.author-signature {
+    margin-top: 30px;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 20px;
+}
+
+.author-signature p {
+    color: var(--text-light);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
+.author-signature span {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* --- Checkout Page --- */
@@ -503,7 +567,8 @@ hr {
 
 /* --- Responsive / Media Queries --- */
 @media (max-width: 992px) {
-    .hero-container, .about-container, .checkout-grid {
+    /* Ajustes para iPad y menores */
+    .hero-container, .about-container, .author-container, .checkout-grid {
         grid-template-columns: 1fr;
     }
     
@@ -511,7 +576,7 @@ hr {
         font-size: 3.5rem;
     }
     
-    .hero-content, .hero-buttons, .about-text {
+    .hero-content, .hero-buttons, .about-text, .author-text {
         text-align: center;
     }
     
@@ -521,6 +586,24 @@ hr {
     
     .check-list li {
         text-align: left;
+    }
+
+    .author-image img {
+        box-shadow: 0px 20px 0px rgba(255, 69, 0, 0.2); /* Ajusta sombra en móviles */
+        margin-bottom: 20px;
+    }
+    
+    .author-image img:hover {
+        transform: translateY(5px);
+        box-shadow: 0px 10px 0px rgba(255, 69, 0, 0.5);
+    }
+    
+    .author-signature {
+        border-left: none;
+        padding-left: 0;
+        border-top: 2px solid var(--primary-color);
+        padding-top: 20px;
+        display: inline-block;
     }
 }
 
